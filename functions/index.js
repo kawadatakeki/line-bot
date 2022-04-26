@@ -13,7 +13,10 @@ exports.lineBot = functions
   .region("asia-northeast1")
   .https.onRequest(async (request, response) => {
     const event = request.body.events[0];
+
+    // ↓ 自分が送ったメッセージ
     const text = event.message.text;
+
     const textMessage = {
       type: "text",
       text: text,
